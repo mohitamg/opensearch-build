@@ -135,5 +135,4 @@ class PerfTestCluster(TestCluster):
             cluster.start()
             yield cluster
         finally:
-            #cluster.terminate()
-            logging.info("Terminated")
+            cluster.terminate()
