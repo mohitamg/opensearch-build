@@ -111,7 +111,10 @@ class PerfTestCluster(TestCluster):
         # Should be invoked only if the endpoint is public.
         assert self.is_endpoint_public, "wait_for_processing should be invoked only when cluster is public"
         logging.info("Waiting for domain to be up")
+        logging.info("is endpoint public")
+        logging.info(self.is_endpoint_public)
         url = "".join([self.endpoint_with_port, "/_cluster/health"])
+        logging.info(url)
         retry_call(requests.get, fkwargs={"url": url, "auth": HTTPBasicAuth('admin', 'admin'), "verify": False},
                    tries=tries, delay=delay, backoff=backoff)
 
