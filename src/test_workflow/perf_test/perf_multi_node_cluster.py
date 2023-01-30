@@ -46,6 +46,7 @@ class PerfMultiNodeCluster(PerfTestCluster):
             "region": config["Constants"]["Region"],
             "cluster_stack_name": self.stack_name,
             "security": "enable" if self.cluster_config.security else "disable",
+            "platform": self.manifest.build.platform,
             "architecture": self.manifest.build.architecture,
             "master_node_count": int(self.cluster_config.master_nodes),
             "data_node_count": int(self.cluster_config.data_nodes),

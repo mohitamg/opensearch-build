@@ -37,6 +37,7 @@ class PerfTestRunnerOpenSearchPlugins(PerfTestRunner):
     def get_plugin_repo_url(self) -> str:
         return f"https://github.com/opensearch-project/{self.args.component}.git"
 
+
     def run_tests(self) -> None:
         with TemporaryDirectory(keep=self.args.keep, chdir=True) as work_dir:
             current_workspace = os.path.join(work_dir.name, self.args.component)
